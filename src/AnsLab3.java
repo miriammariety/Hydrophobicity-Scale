@@ -266,17 +266,12 @@ public class AnsLab3 extends javax.swing.JFrame {
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         // TODO add your handling code here:
-        if(inputArea.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,
-                "No input sequence",
-                "No input Sequence",
-                JOptionPane.ERROR_MESSAGE);
-        } else {
+
             int sni = this.scaleComboBox.getSelectedIndex();
             int sw = Integer.valueOf(String.valueOf(this.wLengthComboBox.getSelectedItem()));
             double threshold = this.thresholdSlider.getValue()/10.0;
             this.hScale.generatePlot(sni, sw, threshold, sequences);
-        }
+
         
     }//GEN-LAST:event_generateButtonActionPerformed
 
@@ -293,10 +288,14 @@ public class AnsLab3 extends javax.swing.JFrame {
         inputArea.addKeyListener(new java.awt.event.KeyListener() {
 
             @Override
-            public void keyTyped(KeyEvent e) {}
+            public void keyTyped(KeyEvent e) {
+                checkInput();
+            }
 
             @Override
-            public void keyPressed(KeyEvent e) {}
+            public void keyPressed(KeyEvent e) {
+                checkInput();
+            }
 
             @Override
             public void keyReleased(KeyEvent e) {

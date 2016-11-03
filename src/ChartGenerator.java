@@ -32,7 +32,7 @@ public class ChartGenerator {
             frame = new JFrame("Hydrophobicity Plots");
         
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(500, 700);
+        frame.setSize(900, 700);
         
         JPanel panel = new JPanel();
         panel.setSize(frame.getSize());
